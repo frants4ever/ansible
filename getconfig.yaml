@@ -1,10 +1,6 @@
 - name: Demonstration of the get_config Ansible module
   gather_facts: false
   hosts: fortics
-  ansible_connection: netconf
-  ansible_network_os:
-  ansible_user: root
-  ansible_password: root
   tasks:
     - name: Execute the get_config RPC
       netconf_get:
