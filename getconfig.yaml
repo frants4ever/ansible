@@ -1,6 +1,6 @@
 - name: Demonstration of the get_config Ansible module
   gather_facts: false
-  hosts: fortics
+  hosts: 192.168.133.84
   tasks:
     - name: Execute the get_config RPC
       ansible.netcommon.netconf_get:
