@@ -3,7 +3,7 @@
   hosts: fortics
   tasks:
     - name: Execute the get_config RPC
-      netconf_get:
+      ansible.netcommon.netconf_get:
         display: native
         source: startup
       register: result
