@@ -1,12 +1,18 @@
 - name: Demonstration of the get_config Ansible module
   gather_facts: false
-  hosts: 192.168.133.84
+  hosts: fortics
+  vars:
+    ansible_connection: netconf
+    ansible_network_os:
+    ansible_user: root
+    ansible_password: root
   tasks:
     - name: Execute the get_config RPC
-      ansible.netcommon.netconf_get:
-        display: native
+      netconf_get:
+        display: pretty
         source: startup
       register: result
     - name: Print the configuration as JSON
       debug:
         var: result.output
+
