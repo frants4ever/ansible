@@ -8,7 +8,7 @@
     ansible_password: root
   tasks:
     - name: Execute the get_config RPC
-      netconf_get1:
+      netconf_get:
         display: pretty
         source: startup
       register: result
